@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+mongoose.connect('mongodb://localhost:27017/companyDB');
+
 var companySchema =new Schema({
     companyDetails : {
         name:String,
@@ -40,7 +42,7 @@ var companySchema =new Schema({
     },
     selectionProcess : {
         selProcess : String,
-        programs:[],
+        programs:String,
         mode:String,
         rounds:Number,
         eligibility:Number,
@@ -62,22 +64,7 @@ app.get("/", (req,res)=>{
     res.sendFile(__dirname + '/index.html');
 });
 
-app.post("/", (req,res)=>{
-    var name = req.body.coName;
-    var email = req.body.coEmail;
-    var num = req.body.coNum;
-    console.log(name);
-    console.log(email);
-    console.log(num);
-
-    res.redirect('/');
-})
-app.get("/form", (req,res)=>{
-    res.sendFile(__dirname + '/form.html');
-});
-
-
-app.post("/form", (res,req)=>{
+app.post("/", (res,req)=>{
     const co = new Company({
         companyDetails : {
             name:req.body.cname,
@@ -107,8 +94,8 @@ app.post("/form", (res,req)=>{
             }
         },
         selectionProcess : {
-            selProcess : req.body.pro,
-            programs:[],
+            selProcess : req.body.selProcess,
+            programs:req.body.programs,
             mode:req.body.mode,
             rounds:req.body.rounds,
             eligibility:req.body.cpi,
@@ -122,11 +109,11 @@ app.post("/form", (res,req)=>{
             home: req.body.home
         } 
     });
-
+    console.log(co);
     co.save();
     res.redirect('/');
 });
 
 app.listen(3000, ()=>{
     console.log("The App is Running on Port 3000");
-})
+});

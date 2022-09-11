@@ -2,154 +2,230 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Placements</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+
+  <title>Registraion Form</title>
 </head>
 
 <body>
+  <div class="container">
+    <form action="/" class="form" method="post">
+      <h1 class="text-center">Registration Form</h1>
+      <!-- Progress bar -->
+      <div class="progressbar">
+        <div class="progress" id="progress"></div>
 
-    <!-- Header -->
-    <section>
-        <div class="container-fluid">
-            <!-- <nav class="navbar sticky-top navbar-expand-lg navbar-dark navbar-head">
-                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                    <img class="logo" src="images/logo-large.jpg" alt="" height="125" width="300">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                    <div class="collapse navbar-collapse">
-                        <ul class="navbar-nav  ">
-                            <li class="nav-item"><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link px-2 link-dark">Departments</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link px-2 link-dark">Students</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link px-2 link-dark">Why Recruit Us?</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link px-2 link-dark">About</a></li>
-                        </ul>
-                        <div class="form-inline my-2 my-lg-0">
-                            <button type="button" onClick="location.href='form'" class="btn btn-secondary btn-lg my-2 my-sm-0">Register</button>
-                        </div>
-                    </div>
-            </nav> -->
+        <div class="progress-step progress-step-active" data-title="Company"></div>
+        <div class="progress-step" data-title="Contact Details"></div>
+        <div class="progress-step" data-title="Recruitment Required"></div>
+        <div class="progress-step" data-title="Salary"></div>
+      </div>
 
-            <!-- New -->
+      <!-- Step1 -->
+      <div class="page">
+        <div class="form-step form-step-active">
+          <div class="left">
+            <div class="input-group">
+              <input type="text" name="cname" id="username" placeholder="Name" />
+            </div>
+            <div class="input-group">
+              <input type="text" name="add" id="address" placeholder="Address" />
+            </div>
+            <div class="input-group">
+              <input type="text" name="url" id="" placeholder="Website(URL)" />
+            </div>
+          </div>
+          <div class="right">
+            <div id="industry">
+              <input class="input-text" type="text" name="sec" value="" placeholder="Industry Sector">
+            </div>
+            <div class="dpd">
+              <select name="category" id="dd">
+                <option value="default" disabled selected>Select your company type</option>
+                <option name="cat" value="MNC">MNC</option>
+                <option name="cat" value="PSU">PSU</option>
+                <option name="cat" value="NGO">NGO</option>
+              </select>
+            </div>
+          </div>
+          <div class="hh">
+            <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+          </div>
+        </div>
+      </div>
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#"><img class="logo" src="images/logo-large.jpg" alt="" height="125" width="300"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-              
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Department <span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Students <span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#">Why Recruit Us?</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#">About</a>
-                    </li>
-                  </ul>
-                  <div class="my-2 my-lg-0">
-                    <button onClick="location.href='form'" class="btn btn-outline-success my-2 my-sm-0" type="submit">Register</button>
-                  </div>
-                </div>
-              </nav>
-
-            <hr class="featurette-divider">
-            <div class="row text-center mb-5 main-body">
-                <div class="col-lg-8 m-auto px-5 ">
-                    <h1 class="display-4 fw-bold lh-1 mb-3">Vertically centered hero sign-up form</h1>
-                    <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls.
-                        Each
-                        required form group has a validation state that can be triggered by attempting to submit the
-                        form
-                        without completing it.</p>
-                </div>
-                <div class="col-lg-4 m-auto pr-3">
-                    <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Example Pvt Ltd" name="coName">
-                            <label for="floatingInput">Company Name</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="coEmail">
-                            <label for="floatingInput">Email Address</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="tel" class="form-control" id="floatingPassword" placeholder="999-999-9999" name="coNum">
-                            <label for="floatingPassword" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">Contact Number</label>
-                        </div>
-                        <div class="form-check my-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                            <label class="form-check-label" for="flexCheckChecked">
-                                Would like to recieve an email from us.
-                            </label>
-                        </div>
-                        <button class="w-100 btn btn-lg btn-primary" type="submit">Connect</button>
-                        <hr class="my-4">
-                        <small class="text-muted">By clicking Connect, you agree to the terms.</small>
-                    </form>
-                </div>
+      <!-- Step2 -->
+      <div class="form-step">
+        <div class="step2">
+          <div class="left-one">
+            <h2>HR Details</h2>
+            <div class="input-group">
+              <input type="text" name="hname" id="username" placeholder="Name" />
+            </div>
+            <div class="input-group">
+              <input type="email" name="hemail" id="address" placeholder="Email" />
+            </div>
+            <div class="input-group">
+              <input type="number" name="hmob" id="" placeholder="Mobile No." />
+            </div>
+            <div id="industry">
+              <input class="input-text" type="hnum" name="landline" value="" placeholder="Landline">
+            </div>
+          </div>
+          <div class="middle">
+            <h2>Contact Person 1</h2>
+            <div class="input-group">
+              <input type="text" name="fname" id="username" placeholder="Name" />
+            </div>
+            <div class="input-group">
+              <input type="email" name="femail" id="address" placeholder="Email" />
+            </div>
+            <div class="input-group">
+              <input type="number" name="fmob" id="" placeholder="Mobile No." />
+            </div>
+            <div id="industry">
+              <input class="input-text" type="landline" name="fnum" value="" placeholder="Landline">
             </div>
 
+          </div>
+
+          <div class="right-one">
+            <h2>Contact Person 2</h2>
+            <div class="input-group">
+              <input type="text" name="sname" id="username" placeholder="Name" />
+            </div>
+            <div class="input-group">
+              <input type="email" name="semail" id="address" placeholder="Email" />
+            </div>
+            <div class="input-group">
+              <input type="number" name="smob" id="" placeholder="Mobile No." />
+            </div>
+            <div id="industry">
+              <input class="input-text" type="snum" name="landline" value="" placeholder="Landline">
+            </div>
+          </div>
+        </div>
+        <div class="btns-group">
+          <a href="#" class="btn btn-next btn2">Next</a>
+          <a href="#" class="btn btn-prev btn2">Previous</a>
+
         </div>
 
+      </div>
 
-
-        <!-- <div class="container-fluid text-center main-body"> -->
-
-
-        <!-- </div> -->
-    </section>
-
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette my-5 px-2">
-        <div class="col-md-8">
-            <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span
-                    class="text-muted">Checkmate.</span></h2>
-            <p class="lead text-content">And yes, this is the last block of representative placeholder content. Again,
-                not really
-                intended to be actually read, simply here to give you a better view of what this would look like with
-                some actual content. Your content.</p>
+      <!-- Step3 -->
+      <div class="form-step">
+        <div class="container3">
+          <div class="left">
+            <div>
+              <h2></h2>
+              <select name="dropdown" id="dd">
+                <option value="default" disabled selected>Selection process</option>
+                <option name="selProcess" value="On-Campus">On-Campus</option>
+                <option name="selProcess" value="Off-Campus">Off-Campus</option>
+              </select>
+            </div>
+            <h3>Programs</h3>
+            <div class="chk">
+              <div>
+                <input name="programs" type="checkbox" value="cse" class="chk2">
+                <label for="" class="lbl">Computer Science & Engineering</label>
+              </div>
+              <div>
+                <input name="programs" type="checkbox" value="idd">
+                <label for="" class="lbl">Integrated Dual Degree in CSE and AI</label>
+              </div>
+              <div>
+                <input name="programs" type="checkbox" value="mnc">
+                <label for="" class="lbl">Mathematics and Computing</label>
+              </div>
+              <div>
+                <input name="programs" type="checkbox" value="it">
+                <label for="" class="lbl">Informational Technology</label>
+              </div>
+            </div>
+          </div>
+          <div class="right" id="four">
+            <div>
+              <h2></h2>
+              <select name="dropdown" id="dd">
+                <option name="mode" value="default" disabled selected>Mode of selection</option>
+                <option name="mode" value="Online">On-Campus</option>
+                <option name="mode" value="Offline">Off-Campus</option>
+              </select>
+            </div>
+            <div>
+              <h2></h2>
+              <select name="dropdown" id="dd">
+                <option name="rounds" value="default" disabled selected>Rounds</option>
+                <option name="rounds" value="1">1</option>
+                <option name="rounds" value="2">2</option>
+                <option name="rounds" value="3">3</option>
+                <option name="rounds" value="4">4</option>
+                <option name="rounds" value="5">5</option>
+                <option name="rounds" value="6">6</option>
+              </select>
+            </div>
+            <div>
+              <h2></h2>
+              <select name="dropdown" id="dd">
+                <option name="eligibility" value="default" disabled selected>Eligibility Criteria (CPI)</option>
+                <option name="cpi" value="7.0+">7.0+</option>
+                <option name="cpi" value="7.5+">7.5+</option>
+                <option name="cpi" value="8.0+">8.0+</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div class="col-md-4">
 
-            <img src="images/logo.jpg" alt="" height="400" width="400">
-
+        <div class="btns-group">
+          <a href="#" class="btn btn-next">Next</a>
+          <a href="#" class="btn btn-prev">Previous</a>
         </div>
-    </div>
+      </div>
 
-    <hr class="featurette-divider">
+      <!-- Step4 -->
+      <div class="form-step">
+        <div class="container3">
+          <div class="left">
+            <div class="input-group">
+              <input type="number" name="ctc " id="username" placeholder="CTC Offered" />
+            </div>
+            <div class="input-group">
+              <input type="number" name="offers" id="address" placeholder=" Vacency" />
+            </div>
+            <div class="input-group">
+              <input type="number" name="gross" id="" placeholder="Gross" />
+            </div>
+          </div>
+          <div class="right" id="four">
+            <div class="input-group">
+              <input type="text" name="bonus " id="username" placeholder="Bonus" />
+            </div>
+            <div class="input-group">
+              <input type="text" name="bond" id="address" placeholder=" Bond" />
+            </div>
+            <div class="input-group">
+              <input type="text" name="home" id="" placeholder="Home" />
+            </div>
 
-    <!-- FOOTER -->
-    <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>&copy; 2022 CSE T&P Cell, RGIPT &middot</p>
-    </footer>
+            <div class="btns-group">
+              <input type="submit" value="Submit" class="btn" />
+              <a href="#" class="btn btn-prev">Previous</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
+    </form>
 
-
-    <script src="index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
