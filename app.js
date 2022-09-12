@@ -64,7 +64,8 @@ app.get("/", (req,res)=>{
     res.sendFile(__dirname + '/index.html');
 });
 
-app.post("/", (res,req)=>{
+app.post("/", (req,res)=>{
+
     const co = new Company({
         companyDetails : {
             name:req.body.cname,
